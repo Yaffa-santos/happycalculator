@@ -1,11 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="index.js"></script>
     <title>Happy Calculadora</title>
-</head>
-<body>
-    
-</body>
+    <link rel="stylesheet" href="style.css"/>
+  </head>
+  <body>
+    <div>
+      <div>
+        Este é o seu resultado &gt; <br>
+        Always be happy
+      </div>
+
+      <button data-modal-id="modal-cilindro" class="modal-button">Volume do cilindro</button>
+      <div id="modal-cilindro" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p>Modal do cilindro</p>
+        </div>
+      </div>
+
+      <button data-modal-id="modal-cone" class="modal-button">Volume do cone</button>
+      <div id="modal-cone" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p>Modal do cone</p>
+        </div>
+      </div>
+
+      <button data-modal-id="modal-triangulo" class="modal-button">Área do triângulo</button>
+      <div id="modal-triangulo" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p>Modal do triângulo</p>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
