@@ -23,17 +23,32 @@ window.addEventListener("load", () => {
     let spanResultado = abaCalculo.querySelector("span#resultado");
 
     let calculos = [
-      {id: "modal-cilindro", texto: "Teste1"},
-      {id: "modal-cone", texto: "Teste2"},
-      {id: "modal-triangulo", texto: "Teste3"},
+      {id: "modal-cilindro", callback: (content) => {
+        let r = content.querySelector("input#raio-base").value;
+        let h = content.querySelector("input#altura").value;
+        return Math.PI * r * r * h;
+      }},
+
+      {id: "modal-cone", callback: (content) => {
+        let r = content.querySelector("input#raio-base").value;
+        let h = content.querySelector("input#altura").value;
+        return 1/3 * Math.PI * r * r * h;
+      }},
+
+      {id: "modal-triangulo", callback: (content) => {
+        let b = content.querySelector("input#base").value;
+        let h = content.querySelector("input#altura").value;
+        return b * h / 2;
+      }},
     ];
 
     for (let c of calculos) {
       let modal = abaCalculo.querySelector("#" + c.id);
-      let btn = modal.querySelector(".modal-content #calcular");
+      let content = modal.querySelector(".modal-content");
+      let btn = modal.querySelector("#calcular");
 
       btn.addEventListener("click", () => {
-        spanResultado.innerText = c.texto;
+        spanResultado.innerText = c.callback(content);
         modal.style.display = "none";
       });
     }
@@ -73,8 +88,4 @@ window.addEventListener("load", () => {
       }
     });
   }
-
-  let calculoVolumeCilindro = (r, h) => Math.PI * r * r * h;
-  let calculoVolumeCone = (r, h) => 1/3 * Math.PI * r * r * h;
-  let calculoAreaTriangulo = (b, h) => b * h / 2;
 });
