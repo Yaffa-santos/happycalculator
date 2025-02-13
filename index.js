@@ -17,4 +17,16 @@ window.addEventListener("load", () => {
         modal.style.display = "none";
     });
   }
+
+  let abas = [
+    document.querySelector("#aba-principal"),
+    document.querySelector("#aba-calculo"),
+    document.querySelector("#aba-formulas"),
+    document.querySelector("#aba-criadores"),
+  ];
+
+  window.goiaba = (id) => {
+    abas.forEach(a => { a.classList.add("aba-escondida") });
+    document.getElementById(id).classList.remove("aba-escondida");
+  };
 });

@@ -40,3 +40,7 @@ html {
   text-decoration: none;
   cursor: pointer;
 }
+
+.aba-escondida {
+  display: none;
+}
