@@ -8,53 +8,62 @@
     <link rel="stylesheet" href="style.css"/>
   </head>
   <body>
-    <div id="aba-principal" class="aba">
-      <span>Seja bem-vindo</span>
-      <span>Happy calculadora</span>
-      <button onclick="goiaba('aba-calculo')">Calculadora de Geometria</button>
-      <button onclick="goiaba('aba-criadores')">Criadores e Colaboradores</button>
+    <div class="sidebar">
+      <p>Coisa 1 na sidebar</p>
+      <p>Coisa 2 na sidebar</p>
     </div>
 
-    <div id="aba-calculo" class="aba aba-escondida">
-      <button data-modal-id="modal-cilindro" class="modal-button">Volume do cilindro</button>
-      <div id="modal-cilindro" class="modal">
-        <div class="modal-content">
-          <span class="close">&times;</span>
-          <p>Modal do cilindro</p>
+    <main>
+      <button id="sidebar-toggle">...</button>
+
+      <div id="aba-principal" class="aba">
+        <span>Seja bem-vindo</span>
+        <span>Happy calculadora</span>
+        <button onclick="goiaba('aba-calculo')">Calculadora de Geometria</button>
+        <button onclick="goiaba('aba-criadores')">Criadores e Colaboradores</button>
+      </div>
+
+      <div id="aba-calculo" class="aba aba-escondida">
+        <button data-modal-id="modal-cilindro" class="modal-button">Volume do cilindro</button>
+        <div id="modal-cilindro" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Modal do cilindro</p>
+          </div>
+        </div>
+
+        <button data-modal-id="modal-cone" class="modal-button">Volume do cone</button>
+        <div id="modal-cone" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Modal do cone</p>
+          </div>
+        </div>
+
+        <button data-modal-id="modal-triangulo" class="modal-button">Área do triângulo</button>
+        <div id="modal-triangulo" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Modal do triângulo</p>
+          </div>
         </div>
       </div>
 
-      <button data-modal-id="modal-cone" class="modal-button">Volume do cone</button>
-      <div id="modal-cone" class="modal">
-        <div class="modal-content">
-          <span class="close">&times;</span>
-          <p>Modal do cone</p>
-        </div>
+      <div id="aba-formulas" class="aba aba-escondida">
+        botar fórmulas aqui
       </div>
 
-      <button data-modal-id="modal-triangulo" class="modal-button">Área do triângulo</button>
-      <div id="modal-triangulo" class="modal">
-        <div class="modal-content">
-          <span class="close">&times;</span>
-          <p>Modal do triângulo</p>
-        </div>
+      <div id="aba-criadores" class="aba aba-escondida">
+        <p>A HAPPY CALCULADORA é um esforço colaborativo de pessoas apaixonadas por matemática e tecnologia. Nossa missão é tornar cálculos geométricos mais acessíveis e intuitivos para estudantes, professores e profissionais.</p>
+        <p>Nosso time é formado por estudantes de informática do IFBA Campus Ilhéus da turma ITI31</p>
+        <p>Agradecemos a todos os usuários que contribuírem com sugestões e feedbacks para tornar nossa calculadora ainda melhor.</p>
+
+        <iframe
+          src="https://docs.google.com/forms/d/e/1FAIpQLScBdATwVf15IXwVxMebosGEkiPsSEq1SP8cVr1eoeLGwoaSQQ/viewform?embedded=true"
+          frameborder="0" marginheight="0" marginwidth="0">
+          Carregando...
+        </iframe>
       </div>
-    </div>
-
-    <div id="aba-formulas" class="aba aba-escondida">
-      botar fórmulas aqui
-    </div>
-
-    <div id="aba-criadores" class="aba aba-escondida">
-      <p>A HAPPY CALCULADORA é um esforço colaborativo de pessoas apaixonadas por matemática e tecnologia. Nossa missão é tornar cálculos geométricos mais acessíveis e intuitivos para estudantes, professores e profissionais.</p>
-      <p>Nosso time é formado por estudantes de informática do IFBA Campus Ilhéus da turma ITI31</p>
-      <p>Agradecemos a todos os usuários que contribuírem com sugestões e feedbacks para tornar nossa calculadora ainda melhor.</p>
-
-      <iframe
-        src="https://docs.google.com/forms/d/e/1FAIpQLScBdATwVf15IXwVxMebosGEkiPsSEq1SP8cVr1eoeLGwoaSQQ/viewform?embedded=true"
-        frameborder="0" marginheight="0" marginwidth="0">
-        Carregando...
-      </iframe>
-    </div>
+    </main>
   </body>
 </html>

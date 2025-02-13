@@ -1,6 +1,10 @@
+:root {
+  --sidebar-width: 10em;
+}
+
 html {
-    background-color: rgb(250, 255, 99);
-    color: rgb(0, 0, 0);
+  background-color: #ffe88d;
+  color: rgb(0, 0, 0);
 }
 
 /* The Modal (background) */
@@ -43,4 +47,51 @@ html {
 
 .aba-escondida {
   display: none;
+}
+
+.sidebar {
+  height: 100%;
+  padding: 0em 0.8em 0em 0.8em;
+  width: var(--sidebar-width);
+  top: 0;
+  left: 0;
+  background-color: #fad517;
+  overflow-x: hidden;
+  position: fixed;
+}
+
+/* small screens */
+@media (max-width: 55em) {
+  .sidebar {
+    display: none;
+  }
+
+  .sidebar.sidebar-ativada {
+    display: block;
+  }
+
+  body {
+    margin-left: 4%;
+    margin-right: 4%;
+  }
+}
+
+/* wide screens */
+@media (min-width: 55em) {
+  body {
+    margin-left: 8%;
+    margin-right: 8%;
+  }
+
+  #sidebar-toggle {
+    display: none;
+  }
+
+  main {
+    left: var(--sidebar-width);
+    position: absolute;
+    padding-left: 3em;
+    padding-right: 0.5em;
+    max-width: 72em;
+  }
 }

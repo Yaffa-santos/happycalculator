@@ -29,4 +29,27 @@ window.addEventListener("load", () => {
     abas.forEach(a => { a.classList.add("aba-escondida") });
     document.getElementById(id).classList.remove("aba-escondida");
   };
+
+  {
+    let sidebar = document.querySelector(".sidebar");
+    let main = document.querySelector("main");
+    let sidebarBtn = document.querySelector("#sidebar-toggle");
+
+    const sidebarAtivada = () => sidebar.classList.contains("sidebar-ativada")
+    const ativarSidebar = () => sidebar.classList.add("sidebar-ativada");
+    const desativarSidebar = () => sidebar.classList.remove("sidebar-ativada");
+
+    window.addEventListener("click", (ev) => {
+      if (ev.target == sidebarBtn) {
+        if (sidebarAtivada())
+          desativarSidebar();
+        else
+          ativarSidebar();
+        main.style.pointerEvents = sidebarAtivada() ? "none" : null;
+      } else if (sidebar != ev.target && !sidebar.contains(ev.target)) {
+        desativarSidebar();
+        main.style.pointerEvents = sidebarAtivada() ? "none" : null;
+      }
+    });
+  }
 });
