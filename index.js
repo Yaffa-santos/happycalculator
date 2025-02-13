@@ -18,6 +18,27 @@ window.addEventListener("load", () => {
     });
   }
 
+  {
+    let abaCalculo = document.querySelector("#aba-calculo");
+    let spanResultado = abaCalculo.querySelector("span#resultado");
+
+    let calculos = [
+      {id: "modal-cilindro", texto: "Teste1"},
+      {id: "modal-cone", texto: "Teste2"},
+      {id: "modal-triangulo", texto: "Teste3"},
+    ];
+
+    for (let c of calculos) {
+      let modal = abaCalculo.querySelector("#" + c.id);
+      let btn = modal.querySelector(".modal-content #calcular");
+
+      btn.addEventListener("click", () => {
+        spanResultado.innerText = c.texto;
+        modal.style.display = "none";
+      });
+    }
+  }
+
   let abas = [
     document.querySelector("#aba-principal"),
     document.querySelector("#aba-calculo"),
@@ -52,4 +73,8 @@ window.addEventListener("load", () => {
       }
     });
   }
+
+  let calculoVolumeCilindro = (r, h) => Math.PI * r * r * h;
+  let calculoVolumeCone = (r, h) => 1/3 * Math.PI * r * r * h;
+  let calculoAreaTriangulo = (b, h) => b * h / 2;
 });
