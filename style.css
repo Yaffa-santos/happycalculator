@@ -119,12 +119,26 @@ header {
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Logo */
+.logo-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.logo-container img {
+  max-width: 150px;
+  height: auto;
+}
+
 /* Botões */
 .button-container {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 15px;
   margin-top: 20px;
+  flex-wrap: wrap;
 }
 
 button {
