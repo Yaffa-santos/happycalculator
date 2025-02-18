@@ -5,29 +5,38 @@
 html {
   background-color: #ffec9f;
   color: rgb(0, 0, 0);
+  font-family: 'Poppins', sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Sigmar&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
+
+.sigmar-regular {
+  font-family: "Sigmar", serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 /* The Modal (background) */
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  display: none;
+  position: fixed;
+  z-index: 1;
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
 }
 
 /* Modal Content/Box */
 .modal-content {
   background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
+  margin: 15% auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+  width: 80%;
 }
 
 /* The Close Button */
@@ -51,22 +60,24 @@ html {
 
 .sidebar {
   height: 100%;
-  padding: 0em 0.8em 0em 0.8em;
+  padding: 0em 0.8em;
   width: var(--sidebar-width);
   top: 0;
   left: 0;
   background-color: #ffd500;
   overflow-x: hidden;
   position: fixed;
+  transition: transform 0.3s ease-in-out;
 }
 
 /* small screens */
 @media (max-width: 55em) {
   .sidebar {
-    display: none;
+    transform: translateX(-100%);
   }
 
   .sidebar.sidebar-ativada {
+    transform: translateX(0);
     display: block;
   }
 
@@ -94,4 +105,73 @@ html {
     padding-right: 0.5em;
     max-width: 72em;
   }
+}
+
+/* Cabeçalho */
+header {
+  background: #ff6f61;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  width: 100%;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Botões */
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+button {
+  background: #ffcc00;
+  color: #333;
+  border: none;
+  padding: 12px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+button i {
+  font-size: 20px;
+}
+
+button:hover {
+  background: #ff9900;
+}
+
+/* Cartões de Fórmulas */
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  margin: 15px;
+  box-shadow: 4px 6px 12px rgba(0, 0, 0, 0.15);
+  transition: 0.3s;
+  text-align: center;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* Rodapé */
+footer {
+  background: #444;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  width: 100%;
+  margin-top: 20px;
 }
