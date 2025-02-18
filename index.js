@@ -62,6 +62,12 @@ window.addEventListener("load", () => {
   ];
 
   window.goiaba = (id) => {
+    let sidebar = document.querySelector(".sidebar");
+    if (id == "aba-principal")
+      sidebar.setAttribute("hidden", true);
+    else
+      sidebar.removeAttribute("hidden");
+
     abas.forEach(a => { a.classList.add("aba-escondida") });
     document.getElementById(id).classList.remove("aba-escondida");
   };
