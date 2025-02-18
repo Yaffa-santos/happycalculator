@@ -1,6 +1,12 @@
 :root {
   --sidebar-width: 10em;
 }
+.sigmar-regular {
+  font-family: "Sigmar", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 
 html {
   background-color: #ffec9f;
