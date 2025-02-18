@@ -58,15 +58,17 @@ html {
   background-color: #ffd500;
   overflow-x: hidden;
   position: fixed;
+  transition: transform 0.3s ease-in-out;
 }
 
 /* small screens */
 @media (max-width: 55em) {
   .sidebar {
-    display: none;
+    transform: translateX(-100%);
   }
 
   .sidebar.sidebar-ativada {
+    transform: translateX(0);
     display: block;
   }
 
