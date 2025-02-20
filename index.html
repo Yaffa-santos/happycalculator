@@ -1,4 +1,31 @@
 <!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robot Calculadora</title>
+    <link rel="stylesheet" href="style.css"/>
+  </head>
+  <body>
+    <div class="container">
+      <img src="robot.png"/>
+      <h1 id="titulo-calc">SEJA BEM-VINDO<br>ROBOT CALCULADORA</h1>
+      <div class="buttons">
+        <a href="calcular.html" class="btn">
+          <span class="icon">📱</span> Calculadora de Geometria
+        </a>
+        <a href="creditos.html" class="btn">
+          <span class="icon">❤️</span> Criadores e Colaboradores
+        </a>
+
+      </div>
+    </div>
+  </body>
+</html>
+
+
+<!--
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <style>
@@ -24,10 +51,13 @@
       <button id="sidebar-toggle">...</button>
 
       <div id="aba-principal" class="aba">
-        <span>Seja bem-vindo</span>
-        <span>Happy calculadora</span>
-        <button onclick="goiaba('aba-calculo')">Calculadora de Geometria</button>
-        <button onclick="goiaba('aba-criadores')">Criadores e Colaboradores</button>
+        <img src="sorriso.png" style="width: 5em; display: block; margin: auto;"/>
+        <p style="text-align: center;">SEJA BEM-VINDO!</p>
+        <p style="text-align: center;">HAPPY CALCULADORA</p>
+        <div class="button-container">
+          <button onclick="goiaba('aba-calculo')">CALCULADORA DE GEOMETRIA</button>
+          <button onclick="goiaba('aba-criadores')">CRIADORES E COLABORADORES</button>
+        </div>
       </div>
 
       <div id="aba-calculo" class="aba aba-escondida">
@@ -35,7 +65,8 @@
         <div id="modal-cilindro" class="modal">
           <div class="modal-content">
             <span class="close">&times;</span>
-            <p>Modal do cilindro</p>
+           
+            <p>Volume do cilindro</p>
             <p>Raio da base: <input id="raio-base" type="number"/></p>
             <p>Altura: <input id="altura" type="number"/></p>
             <button id="calcular">Calcular</button>
@@ -46,7 +77,7 @@
         <div id="modal-cone" class="modal">
           <div class="modal-content">
             <span class="close">&times;</span>
-            <p>Modal do cone</p>
+            <p>Volume do cone</p>
             <p>Raio da base: <input id="raio-base" type="number"/></p>
             <p>Altura: <input id="altura" type="number"/></p>
             <button id="calcular">Calcular</button>
@@ -57,7 +88,7 @@
         <div id="modal-triangulo" class="modal">
           <div class="modal-content">
             <span class="close">&times;</span>
-            <p>Modal do triângulo</p>
+            <p>Área do triângulo</p>
             <p>Base: <input id="base" type="number"/></p>
             <p>Altura: <input id="altura" type="number"/></p>
             <button id="calcular">Calcular</button>
@@ -85,3 +116,4 @@
     </main>
   </body>
 </html>
+-->

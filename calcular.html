@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robot Calculadora</title>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <link rel="stylesheet" href="style2.css"/>
+  </head>
+  <body>
+      <a href="index.html" class="btn">
+        <span class="icon">?</span> Página inicial
+      </a>
+      <a href="calcular.html" class="btn">
+        <span class="icon">📱</span> Calculadora de Geometria
+      </a>
+      <a href="creditos.html" class="btn">
+        <span class="icon">❤️</span> Créditos
+      </a>
+      <a href="formulas.html" class="btn">
+        <span class="icon">❤?</span> Fórmulas
+      </a>
+
+     <div class="container">
+        <div>
+            <div id="cone"></div>
+            <button class="button" onclick="calcularVolumeCone()">Volume do Cone</button>
+        </div>
+        <div>
+            <div id="cilindro"></div>
+            <button class="button" onclick="calcularVolumeCilindro()">Volume do Cilindro</button>
+        </div>
+        <div>
+            <div id="triangulo"></div>
+            <button class="button" onclick="calcularAreaTriangulo()">Área do Triângulo</button>
+        </div>
+
+      <div class="resultado-container">
+          <h2>SEU RESULTADO</h2>
+          <div class="resultado-box">
+          <span id="resultado-texto">Escolha uma forma para calcular</span>
+          </div>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    function calcularVolumeCone() {
+        let raio = prompt("Digite o raio do cone:");
+        let altura = prompt("Digite a altura do cone:");
+
+        if (raio && altura) {
+            let volume = (1 / 3) * Math.PI * Math.pow(raio, 2) * altura;
+            document.getElementById("resultado-texto").innerText = `Volume do Cone: ${volume.toFixed(2)} unidades³`;
+        }
+    }
+
+    function calcularVolumeCilindro() {
+        let raio = prompt("Digite o raio do cilindro:");
+        let altura = prompt("Digite a altura do cilindro:");
+
+        if (raio && altura) {
+            let volume = Math.PI * Math.pow(raio, 2) * altura;
+            document.getElementById("resultado-texto").innerText = `Volume do Cilindro: ${volume.toFixed(2)} unidades³`;
+        }
+    }
+
+    function calcularAreaTriangulo() {
+        let base = prompt("Digite a base do triângulo:");
+        let altura = prompt("Digite a altura do triângulo:");
+
+        if (base && altura) {
+            let area = (base * altura) / 2;
+            document.getElementById("resultado-texto").innerText = `Área do Triângulo: ${area.toFixed(2)} unidades²`;
+        }
+    }
+
+    function createScene(elementId, shape) {
+          const scene = new THREE.Scene();
+          const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
+
+          const renderer = new THREE.WebGLRenderer({ alpha: true });
+          renderer.setClearColor(0x000000, 0);
+          renderer.setSize(150, 150);
+
+          document.getElementById(elementId).appendChild(renderer.domElement);
+          
+          const light = new THREE.PointLight(0xffffff, 1.2);
+          light.position.set(2, 2, 2);
+          scene.add(light);
+
+          let geometry;
+          if (shape === 'cone') {
+              geometry = new THREE.ConeGeometry(1, 2, 32);
+          } else if (shape === 'cilindro') {
+              geometry = new THREE.CylinderGeometry(2, 2, 4, 64);
+          } else {
+              geometry = new THREE.ConeGeometry(1, 2, 4);
+          }
+          
+          const material = new THREE.MeshStandardMaterial({ color: 0x3498db });
+          const object = new THREE.Mesh(geometry, material);
+          scene.add(object);
+          camera.position.z = 5;
+
+          function animate() {
+            if (shape !== "triangulo")
+              requestAnimationFrame(animate);
+            object.rotation.y += 0.01;
+            renderer.render(scene, camera);
+          }
+
+          animate();
+      }
+      
+      createScene("cone", "cone");
+      createScene("cilindro", "cilindro");
+      createScene("triangulo", "triangulo");
+  </script>
+</html>
