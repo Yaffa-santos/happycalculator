@@ -1,0 +1,26 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #aaa;
+}
+.container {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    align-items: center;
+}
+canvas {
+    display: block;
+}
+.button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
