@@ -33,16 +33,16 @@
 
     <main>
       <div class="container">
-        <div>
-          <div id="cone"></div>
+        <div class="down-idk">
+          <img src="cone_img.png" style="width: 10em;"/>
           <button class="button" onclick="calcularVolumeCone()">Volume do Cone</button>
         </div>
-        <div>
-          <div id="cilindro"></div>
+        <div class="down-idk">
+          <img src="cylinder_img.png" style="width: 10em;"/>
           <button class="button" onclick="calcularVolumeCilindro()">Volume do Cilindro</button>
         </div>
-        <div>
-          <div id="triangulo"></div>
+        <div class="down-idk">
+          <img src="triangulo_img.png" style="width: 10em;"/>
           <button class="button" onclick="calcularAreaTriangulo()">Área do Triângulo</button>
         </div>
 
@@ -93,55 +93,5 @@
 	document.getElementById("resultado-texto").innerText = `Área do Triângulo: ${area.toFixed(2)} unidades²`;
       }
     }
-
-    function createScene(elementId, shape) {
-      const scene = new THREE.Scene();
-      const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
-
-      const renderer = new THREE.WebGLRenderer({ alpha: true });
-      renderer.setClearColor(0x000000, 0);
-      renderer.setSize(150, 150);
-
-      document.getElementById(elementId).appendChild(renderer.domElement);
-      
-      const light = new THREE.PointLight(0xffffff, 1.2);
-      light.position.set(2, 2, 2);
-      scene.add(light);
-
-      let geometry = null;
-      switch (shape) {
-	case "cone":
-	  geometry = new THREE.ConeGeometry(2, 4, 64);
-	  camera.rotation.z = 0.1 * Math.PI;
-	  break;
-	case "cilindro":
-	  geometry = new THREE.CylinderGeometry(2, 2, 4, 64);
-	  camera.rotation.z = 0.1 * Math.PI;
-	  break;
-	case "triangulo":
-	  geometry = new THREE.ConeGeometry(2, 4, 4);
-	  camera.rotation.x = 0.1 * Math.PI;
-	  camera.position.y -= 2;
-	  break;
-      }
-
-      const material = new THREE.MeshStandardMaterial({ color: 0x3498db });
-      const object = new THREE.Mesh(geometry, material);
-      scene.add(object);
-      camera.position.z = 5;
-
-      function animate() {
-	if (shape !== "triangulo")
-	  requestAnimationFrame(animate);
-	object.rotation.y += 0.01;
-	renderer.render(scene, camera);
-      }
-
-      animate();
-    }
-      
-    createScene("cone", "cone");
-    createScene("cilindro", "cilindro");
-    createScene("triangulo", "triangulo");
   </script>
 </html>

@@ -13,6 +13,12 @@ main {
   align-items: center;
 }
 
+.down-idk {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 canvas {
   display: block;
 }
