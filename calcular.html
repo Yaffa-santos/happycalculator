@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Robot Calculadora</title>
 
-    <link rel="stylesheet" href="style2.css"/>
+    <link rel="stylesheet" href="calcular.css"/>
     <link rel="stylesheet" href="todos.css"/>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -16,46 +16,49 @@
   </head>
 
   <body>
-    <a href="index.html" class="btn">
-      <span class="icon">?</span> Página inicial
-    </a>
-    <a href="calcular.html" class="btn">
-      <span class="icon">📱</span> Calculadora de Geometria
-    </a>
-    <a href="creditos.html" class="btn">
-      <span class="icon">❤️</span> Créditos
-    </a>
-    <a href="formulas.html" class="btn">
-      <span class="icon">❤?</span> Fórmulas
-    </a>
+    <div class="topnav">
+      <a href="index.html" class="btn active">
+        <span class="icon">🏠</span> Página inicial
+      </a>
+      <a href="calcular.html" class="btn">
+        <span class="icon">📱</span> Calculadora de Geometria
+      </a>
+      <a href="formulas.html" class="btn">
+        <span class="icon">📚</span> Fórmulas
+      </a>
+      <a href="creditos.html" class="btn">
+        <span class="icon">❤️</span> Créditos
+      </a>
+    </div>
 
-    <div class="container">
-      <div>
-        <div id="cone"></div>
-        <button class="button" onclick="calcularVolumeCone()">Volume do Cone</button>
-      </div>
-      <div>
-        <div id="cilindro"></div>
-        <button class="button" onclick="calcularVolumeCilindro()">Volume do Cilindro</button>
-      </div>
-      <div>
-        <div id="triangulo"></div>
-        <button class="button" onclick="calcularAreaTriangulo()">Área do Triângulo</button>
-      </div>
+    <main>
+      <div class="container">
+        <div>
+          <div id="cone"></div>
+          <button class="button" onclick="calcularVolumeCone()">Volume do Cone</button>
+        </div>
+        <div>
+          <div id="cilindro"></div>
+          <button class="button" onclick="calcularVolumeCilindro()">Volume do Cilindro</button>
+        </div>
+        <div>
+          <div id="triangulo"></div>
+          <button class="button" onclick="calcularAreaTriangulo()">Área do Triângulo</button>
+        </div>
 
-      <div class="resultado-container">
-        <h2>SEU RESULTADO</h2>
-        <div class="resultado-box">
-          <span id="resultado-texto">Escolha uma forma para calcular</span>
+        <div class="resultado-container">
+          <h2>SEU RESULTADO</h2>
+          <div class="resultado-box">
+            <span id="resultado-texto">Nenhum ainda (faça um cálculo primeiro...)</span>
+          </div>
         </div>
       </div>
-    </div>
+    </main>
   </body>
 
   <script>
     function tocarSom() {
-      let audio = document.querySelector("#sfx");
-      audio.play();
+      document.querySelector("#sfx").play();
     }
 
     function calcularVolumeCone() {
